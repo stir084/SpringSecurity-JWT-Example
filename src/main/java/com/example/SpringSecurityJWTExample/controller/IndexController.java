@@ -20,7 +20,6 @@ public class IndexController {
 
     @GetMapping("/index")
     public String index() {
-        System.out.println("dfdf");
         return "index";
     }
 }

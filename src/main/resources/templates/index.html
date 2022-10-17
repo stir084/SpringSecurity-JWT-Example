@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Title</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+
 </head>
 <body>
-인덱스 페이지 입니다요
+<div class="container">
+    <h2>Main Page</h2>
+    <button type="button" class="btn btn-primary" onclick="login();">로그인</button>
+    <button type="button" class="btn btn-primary" onclick="join();">회원가입</button>
+</div>
+
 </body>
+<script>
+function login(){
+    location.href = "/login_page";
+}
+function join(){
+    location.href = "/join";
+}
+</script>
 </html>
