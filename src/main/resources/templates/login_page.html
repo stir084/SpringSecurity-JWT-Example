@@ -40,7 +40,7 @@
                             </div>
                         </form>
                     </div>
-		<div class="signup-image">
+		            <div class="signup-image">
                         <figure><img src="images/signin-image.jpg" alt="sing up image"></figure>
                         <a href="/join" class="signup-image-link">계정이 없으신가요?</a>
                     </div>
@@ -49,29 +49,15 @@
             </div>
         </section>
     </div>
-   <!-- <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />-->
-
-   <!-- <meta name="_csrf_header" content="${_csrf.headerName}" />
-    <meta name="_csrf" content="${_csrf.token}" />
--->
-
-    <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 <script>
     function login(){
-        //var token = $("meta[name='_csrf']").attr("content");
-        //var header = $("meta[name='_csrf_header']").attr("content");
-
         var data = {
             username: $('#username').val(),
             password: $('#password').val()
         };
-
-
-        //alert(header+"-"+token);
-
 
         $.ajax({
             type: 'POST',
@@ -82,7 +68,7 @@
             let jwtToken = xhr.getResponseHeader('Authorization');
             localStorage.setItem("Authorization", jwtToken);
             alert(jwtToken)
-            location.href = "/index"; //권한 뺏기는 페이지로 ㄱㄱ
+            location.href = "/index";
         }).fail(function (error) {
             alert("존재하지 않는 회원입니다.");
         });

@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!--    <meta name="_csrf" th:content="${_csrf.token}">
-    <meta name="_csrf_header" th:content="${_csrf.headerName}">-->
     <title>Sign Up Form by Colorlib</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -56,7 +54,7 @@
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 <script>
     function join(){
 
@@ -66,19 +64,12 @@
             email: $('#email').val()
         };
 
-
-/*        var header = $("meta[name='_csrf_header']").attr('content');
-        var token = $("meta[name='_csrf']").attr('content');*/
-
         $.ajax({
             type: 'POST',
             url: '/api/v1/join',
             dataType: 'text',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data),
-   /*         beforeSend: function(xhr){
-                xhr.setRequestHeader(header, token);
-            },*/
         }).done(function(res){
             alert("회원 가입 성공");
             location.href = "/login_page";
