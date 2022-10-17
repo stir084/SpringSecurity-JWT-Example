@@ -18,7 +18,9 @@ public class IndexController {
         return "join";
     }
 
-    @RequestMapping(value = "/login")
-    @ResponseBody
-    public String login() { return "login"; }
+    @GetMapping("/index")
+    public String index() {
+        System.out.println("dfdf");
+        return "index";
+    }
 }

@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="_csrf" th:content="${_csrf.token}">
-    <meta name="_csrf_header" th:content="${_csrf.headerName}">
 
     <title>Sign Up Form by Colorlib</title>
 
@@ -37,7 +35,7 @@
                             </div>
               
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" onclick="login()" value="로그인"/>
+                                <input type="button" name="signup" id="signup" class="form-submit" onclick="login()" value="로그인"/>
 
                             </div>
                         </form>
@@ -65,42 +63,26 @@
     function login(){
         //var token = $("meta[name='_csrf']").attr("content");
         //var header = $("meta[name='_csrf_header']").attr("content");
+
         var data = {
             username: $('#username').val(),
             password: $('#password').val()
         };
 
-        var header = $("meta[name='_csrf_header']").attr('content');
-        var token = $("meta[name='_csrf']").attr('content');
 
         //alert(header+"-"+token);
 
-        $.ajax({
-            url: url,
-            beforeSend: function(xhr){
-                xhr.setRequestHeader(header, token);
-            },
-            success: function(res) {
-                console.log(res);
-            }
-        });
 
-        /*$.ajax({
+        $.ajax({
             type: 'POST',
             url: '/login',
-            dataType: 'json',
-            //contentType:'application/json; charset=utf-8',
+            contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data),
-            beforeSend : function(xhr)
-            {
-                //xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
-                xhr.setRequestHeader(header, token);
-            },
         }).done(function(res){
-            alert("123");
+            location.href = "/index"; //권한 뺏기는 페이지로 ㄱㄱ
         }).fail(function (error) {
-            alert("456");
-        });*/
+            alert("존재하지 않는 회원입니다.");
+        });
     }
 </script>
 </html>
