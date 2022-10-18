@@ -63,27 +63,6 @@ public class SecurityConfig {
 				.anyRequest().permitAll()
 				.and().build();
 	}
-
-	/*@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable()
-				.addFilter(corsConfig.corsFilter())
-				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-				.and()
-				.formLogin().disable()
-				.httpBasic().disable()
-
-				.addFilter(new JwtAuthenticationFilter(authenticationManager()))
-				.addFilter(new JwtAuthorizationFilter(authenticationManager(), userRepository))
-				.authorizeRequests()
-				.antMatchers("/api/v1/user/**")
-				.access("hasRole('ROLE_USER') or hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
-				.antMatchers("/api/v1/manager/**")
-				.access("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
-				.antMatchers("/api/v1/admin/**")
-				.access("hasRole('ROLE_ADMIN')")
-				.anyRequest().permitAll();
-	}*/
 }
 
 
