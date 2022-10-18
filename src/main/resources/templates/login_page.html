@@ -67,7 +67,6 @@
         }).done(function(data,status,xhr){
             let jwtToken = xhr.getResponseHeader('Authorization');
             localStorage.setItem("Authorization", jwtToken);
-            alert(jwtToken)
             location.href = "/index";
         }).fail(function (error) {
             alert("존재하지 않는 회원입니다.");
