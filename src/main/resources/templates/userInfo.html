@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Title</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+
+</head>
+<body>
+<div class="container">
+    당신이 로그인 한 사람의 이름은
+    <div>
+        유저정보
+    </div>
+    <h2></h2>
+    <h2>Main Page</h2>
+</div>
+
+</body>
+<script>
+        $.ajax({
+            type: 'POST',
+            url: '/api/v1/user',
+            contentType:'application/json; charset=utf-8',
+            data: JSON.stringify(data),
+        }).done(function(data,status,xhr){
+            let jwtToken = xhr.getResponseHeader('Authorization');
+
+            location.href = "/index";
+        }).fail(function (error) {
+            alert("존재하지 않는 회원입니다.");
+        });
+alert(3+"그래도 타임리프 태그는 못쓴다");
+</script>
+</html>

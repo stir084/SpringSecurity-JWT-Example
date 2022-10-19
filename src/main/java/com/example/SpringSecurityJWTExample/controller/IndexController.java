@@ -22,4 +22,9 @@ public class IndexController {
     public String index() {
         return "index";
     }
+
+    @GetMapping("/userInfo")
+    public String userInfo() {
+        return "userInfo";
+    }
 }

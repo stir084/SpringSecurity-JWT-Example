@@ -16,6 +16,7 @@
     <h2>Main Page</h2>
     <button type="button" class="btn btn-primary" onclick="login();">로그인</button>
     <button type="button" class="btn btn-primary" onclick="join();">회원가입</button>
+    <button type="button" class="btn btn-primary" onclick="authorization();">유저 확인</button>
 </div>
 
 </body>
@@ -25,6 +26,9 @@ function login(){
 }
 function join(){
     location.href = "/join";
+}
+function authorization(){
+    location.href = "/api/v1/user";
 }
 </script>
 </html>
