@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
+<!--<html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+위의 태그는 REST API 사용 시 사용 불가-->
+<html lang="en">
 <head>
 
     <head>
@@ -16,7 +18,7 @@
     <h2>Main Page</h2>
     <button type="button" class="btn btn-primary" onclick="login();">로그인</button>
     <button type="button" class="btn btn-primary" onclick="join();">회원가입</button>
-    <button type="button" class="btn btn-primary" onclick="authorization();">유저 확인</button>
+    <button type="button" class="btn btn-primary" onclick="authorization();">프로필</button>
 </div>
 
 </body>
@@ -28,7 +30,7 @@ function join(){
     location.href = "/join";
 }
 function authorization(){
-    location.href = "/api/v1/user";
+    location.href = "/myprofile";
 }
 </script>
 </html>

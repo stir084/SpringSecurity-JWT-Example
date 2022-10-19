@@ -21,7 +21,7 @@
         <section class="signup">
             <div class="container">
                 <div class="signup-content">
- <div class="signup-image">
+                    <div class="signup-image">
                         <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
                         <a href="/login_page" class="signup-image-link">이미 회원이신가요?</a>
                     </div>
@@ -66,7 +66,7 @@
 
         $.ajax({
             type: 'POST',
-            url: '/api/v1/join', //이건 어떻게 인가되지? 포스트맨 확인
+            url: '/api/v1/join',
             dataType: 'text',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data),

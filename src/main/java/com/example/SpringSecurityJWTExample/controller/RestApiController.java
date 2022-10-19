@@ -28,31 +28,30 @@ public class RestApiController {
 		return "<h1>home</h1>";
 	}
 
-	@GetMapping("/log")
-	public String log(HttpSession session) {
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
 		session.invalidate();
-		return "log";
+		return "logout";
 	}
 
-
 	@GetMapping("/user")
-	public String user(Authentication authentication) {
+	public PrincipalDetails user(Authentication authentication) {
 		PrincipalDetails principal = (PrincipalDetails) authentication.getPrincipal();
 		System.out.println("principal : "+principal.getUser().getId());
 		System.out.println("principal : "+principal.getUser().getUsername());
 		System.out.println("principal : "+principal.getUser().getPassword());
 
-		return "<h1>user</h1>";
+		return principal;
 	}
 
 	// 매니저 혹은 어드민이 접근 가능
-	@GetMapping("manager/reports")
+	@GetMapping("/manager/reports")
 	public String reports() {
 		return "<h1>reports</h1>";
 	}
 
 	// 어드민이 접근 가능
-	@GetMapping("admin/users")
+	@GetMapping("/admin/users")
 	public List<User> users(){
 		return userRepository.findAll();
 	}

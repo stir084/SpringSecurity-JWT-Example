@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Title</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+
+</head>
+<body>
+    <div id="profile">
+    </div>
+</body>
+<script>
+        $.ajax({
+            type: 'GET',
+            url: '/api/v1/user',
+            contentType:'application/json; charset=utf-8',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Content-type","application/json");
+                xhr.setRequestHeader("Authorization", localStorage.getItem("Authorization"));
+            },
+        }).done(function(data,status,xhr) {
+            $("#profile").html("사용자의 ID는 " + data.user.username + "입니다.<br>10초뒤에 토큰이 만료됩니다.");
+        }).fail(function(xhr, status, error){
+            var jsonResponse = JSON.parse(xhr.responseText);
+            if(jsonResponse.status == "403" || jsonResponse.status == "500"){ //로그인을 안했거나 토큰이 만료됐거나
+                alert("로그인이 필요한 페이지입니다.");
+                location.href = "/login_page";
+            }
+        });
+</script>
+</html>
