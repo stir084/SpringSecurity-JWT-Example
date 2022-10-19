@@ -1,7 +1,7 @@
 ### JWT + Thymeleaf + Spring Boot 회원가입 시스템 
 
 ### 메인페이지
-![image](https://user-images.githubusercontent.com/47946124/196226640-99e0b6d4-1604-4429-b94a-e69a09ef6e11.png)
+![image](https://user-images.githubusercontent.com/47946124/196721922-83d63cb9-59ab-4572-b4a1-a9b96aa57ed9.png)
 
 ### 회원가입
 ![image](https://user-images.githubusercontent.com/47946124/196226399-72785dba-2f2a-4fca-8fcd-66cd3bc46786.png)
