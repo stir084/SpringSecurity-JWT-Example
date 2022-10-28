@@ -15,7 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1")
 @RequiredArgsConstructor
-// @CrossOrigin  // CORS 허용 
 public class RestApiController {
 
 
@@ -42,12 +41,6 @@ public class RestApiController {
 		System.out.println("principal : "+principal.getUser().getPassword());
 
 		return principal;
-	}
-
-	// 매니저 혹은 어드민이 접근 가능
-	@GetMapping("/manager/reports")
-	public String reports() {
-		return "<h1>reports</h1>";
 	}
 
 	// 어드민이 접근 가능
